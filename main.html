@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Responsive.js"></script>
+
+
+  <script src="./chart1.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/radar.js"></script>
+
+  <script src="./grid1.js"></script>
+  <script src="./grid2.js"></script>
+  <script src="./grid3.js"></script>
+  <script src="./grid4.js"></script>
+  <script src="./grid5.js"></script>
+  
+  <script src="./grid6.js"></script>
+  
+
+
+</head>
+<style>
+  .navbar-custom {
+    background-color: #001636 !important;
+    /* height: 83px !important; */
+    /* border-bottom: 3px solid white; */
+    /* padding: 0 20px 0 20px; */
+    /* width: 100%; */
+  }
+
+
+
+  .navbar-brand {
+    /* 
+  width: 100%;
+  font-size: 19px; */
+    /* font: normal normal medium 19px/29px Poppins; */
+    color: #FFFFFF;
+    opacity: 1;
+    letter-spacing: 5px;
+    /* text-align: left !important; */
+
+
+  }
+
+  /* .navbar-icons {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+} */
+
+  /* .navbar-icons img {
+  margin-right: 100px;
+  top: 27px;
+  left: 1590px;
+  width: 26px;
+  height: 33px;
+  
+} */
+
+  /* .navbar-icons-right {
+  margin-right: 10px;
+} */
+</style>
+
+<body class=" m-0 border-0 bd-example m-0 border-0">
+  <nav
+    class="navbar navbar-expand-lg navbar-expand-sm navbar-dark navbar-custom border-bottom-3 border-white px-3 w-100 border-primary border-bottom">
+    <div class="container-fluid ">
+      <img src="asscets/Layer 1.svg" alt="Avatar Logo" style="width:163.4px; height:37px;" class="rounded-pill">
+      <a class="navbar-brand me-auto" href="#">BIG DATA SECURITY ANALYTICS PLATFORM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="text-end" id="navbarNavDropdown">
+        <ul class="navbar-nav text-end">
+            <li class="nav-item dropdown">
+                <div class="d-flex align-items-center position-fixed-left h-100">
+                    <a class="nav-link active dropdown-toggle pe-5" href="#" id="notificationDropdown"
+                       role="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding: 0;">
+                        <img src="asscets/Path 46.svg" class="me-2" style="width: 30px;">
+                        <span id="notificationCount" class="position-absolute translate-middle badge rounded-pill text-bg-light pe-4">
+                            
+                            <span class="visually-hidden"></span>
+                        </span>
+                    </a>
+                </div>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown" id="notificationList">
+                    <!-- Latest notifications will be populated here -->
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <div class="d-flex align-items-center me-5 h-100 ">
+                    <a class="nav-link dropdown-toggle" href="#" id="warningDropdown" role="button" 
+                       data-bs-toggle="dropdown" aria-expanded="false" style="padding: 0;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" fill="#ffffff"
+                             class="bi bi-exclamation-circle exc" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                            <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>
+                        </svg>
+                        <span id="warningCount" class="position-absolute mt- translate-middle badge rounded-pill text-bg-light pe-4">
+                            
+                            <span class="visually-hidden"></span>
+                        </span>
+                    </a>
+                </div>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="warningDropdown" id="warningList">
+                    <!-- Latest warnings will be populated here -->
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><img src="asscets/Group 10.svg" class="admini"> <!-- Admin Image --></a>
+            </li>
+        </ul>
+    </div>
+    </div>
+  </nav>
+
+  <div class="dashboard">
+
+    <div class="sidebar d-flex justify-content-center">
+      <ul class="p-0">
+        <div class="d-flex justify-content-center p-3 border-bottom">
+          <li><img src="asscets/icon1.svg" alt="Icon 2"></li>
+        </div>
+        <div class="icon-list">
+          <!-- Add a <hr> tag after the first icon -->
+          <li><img src="asscets/icon2.svg" alt="Icon 3"></li>
+          <li><img src="asscets/ic_desktop_windows_24px.svg" alt="Icon 4"></li>
+          <li><img src="asscets/icon3.svg" alt="Icon 5"></li>
+          <li><img src="asscets/icon4.svg" alt="Icon 6"></li>
+          <li><img src="asscets/icon5.svg" alt="Icon 7"></li>
+          <li><img src="asscets/icon6.svg" alt="Icon 8"></li>
+          <li><img src="asscets/icon7.svg" alt="Icon 9"></li>
+          <li><img src="asscets/icon8.svg" alt="Icon 10"></li>
+        </div>
+
+      </ul>
+    </div>
+
+    <div class="content">
+      <!-- <div class="text-center">
+      <div class="parent-container">
+        <div class="grid-container-1">
+          <img src="asscets/HOME DASHBOARD.svg" class="homedashimg">
+           <h4 class="homedashtext">HOME DASHBOARD</h4>
+           
+        </div>
+        <div class="grid-container-2">
+          <h1>grid2</h1>
+        </div>
+        <div class="grid-container-3">
+          <h1>grid3</h1>
+        </div>
+        <div class="grid-container-4">
+          <h1>grid4</h1>
+        </div>
+        <div class="grid-container-5">
+          <h1>grid5</h1>
+        </div>
+        <div class="grid-container-6">
+          <h1>grid6</h1>
+        </div>
+        <div class="grid-container-7">
+          <h1>grid7</h1>
+        </div>
+        <div class="grid-container-8">
+          <h1>grid8</h1>
+        </div>
+      </div>
+    </div> -->
+
+      <!-- HTML code -->
+      <div>
+
+
+        <div class="d-flex justify-content-between">
+          <div class="p-3">
+            <img src="asscets/HOME DASHBOARD.svg" alt="homedashboard">
+            <i class="fa fa-icon"></i><span class="homeicontext p-3 ">HOME DASHBOARD</span>
+          </div>
+
+          <div class="p-3">
+            <!-- Summary button here -->
+            <button class="btn btn-primary btn-colour "><span>Summary</span></button>
+
+          </div>
+
+
+
+
+        </div>
+      </div>
+
+
+      <div class="row ">
+
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <div class="d-flex justify-content-between bg-white rounded-pill ps-2 pe-2">
+            <div>Today's Log Events</div>
+            <div><img src="asscets/arrow-clockwise.svg" alt="restart-arrow"></div>
+          </div>
+          <div class="w-100 d-flex">
+            <div class="w-50">
+              <div class="display-6 mt-1 text-white a"></div>
+              <div>
+                <div>
+                  <span class="text-white h5"></span>
+                </div>
+              </div>
+            </div>
+            <div id="chartdiv1" class="w-50"></div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <div class="d-flex justify-content-between bg-white rounded-pill ps-2 pe-2">
+            <div class="">Today's threat Signature Matches</div>
+            <div><img src="asscets/arrow-clockwise.svg" alt="restart-arrow"></div>
+          </div>
+          <div class="w-100 d-flex">
+            <div class="w-50">
+              <div class="display-6 mt-1 text-white a"></div>
+              <div>
+                <div>
+                  <span class="text-white h5"></span>
+                </div>
+              </div>
+            </div>
+            <div id="chartdiv2" class="w-50"></div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <div class="d-flex justify-content-between bg-white rounded-pill ps-2 pe-2">
+            <div class="">Today's Alerts</div>
+            <div><img src="asscets/arrow-clockwise.svg" alt="restart-arrow"></div>
+          </div>
+          <div class="w-100 d-flex">
+            <div class="w-50">
+              <div class="display-6 mt-1 text-white a"></div>
+              <div>
+                <div>
+                  <span class="text-white h5"></span>
+                </div>
+              </div>
+            </div>
+            <div id="chartdiv3" class="w-50"></div>
+          </div>
+
+
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <div class="d-flex justify-content-between bg-white rounded-pill ps-2 pe-2">
+            <div class="">Today's Suspicious Events</div>
+            <div><img src="asscets/arrow-clockwise.svg" alt="restart-arrow"></div>
+          </div>
+          <div class="w-100 d-flex">
+            <div class="w-50">
+              <div class="display-6 mt-1 text-white a"></div>
+              <div>
+                <div>
+                  <span class="text-white h5"></span>
+                </div>
+              </div>
+            </div>
+            <div id="chartdiv4" class="w-50"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row p-3">
+        <div class="col-sm-12 col-md-12 col-lg-6">
+          <div class="p-3 gridmaincolor trafficbyorganizationheight ">
+
+
+            <div class="w-100 h-25 maingridscaption d-flex justify-content-between">
+              <div class=" bg-white rounded-pill pe-2 ps-1 big11high maxcontent">
+
+                <img src="asscets/Group 96.svg" alt="restart-arrow">
+                <span class="fs-6">OVERALL TRAFFIC STATISTICS</span>
+              </div>
+              <div class="maingrid1color eventstransparncy">EVENTS / SECOND : 398</div>
+            </div>
+            <div class="w-100 d-flex">
+              <div id="chartdivgrid1"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-6  gy-3">
+              <div class="p-3 gridmaincolor trafficbyorganizationheight">
+
+
+                <div class="w-100 h-25 maingridscaption d-flex justify-content-between">
+                  <div class=" bg-white rounded-pill pe-2 ps-1 big11high maxcontent">
+
+                    <img src="asscets/traffic by source type.svg" alt="restart-arrow">
+                    <span class="fs-6">TRAFFIC BY SOURCE TYPE</span>
+                  </div>
+
+                </div>
+                <div class="w-100 d-flex">
+                  <div id="chartdivgrid2" class=""></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 gy-3">
+                  <div class="p-3 gridmaincolor trafficbyorganizationheight">
+
+
+                    <div class="w-100 h-25 maingridscaption d-flex justify-content-between ">
+                      <div class=" bg-white rounded-pill pe-2 ps-1 big11high maxcontent ">
+
+                        <img src="asscets/traffic by organisation.svg" alt="restart-arrow">
+                        <span class="fs-6">TRAFIC BY ORGANIZATION</span>
+                      </div>
+
+                    </div>
+                    <div class="w-100 d-flex">
+                      <div id="chartdivgrid3" class="w-50"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6 mt-3 ">
+              <div class="p-3 gridmaincolor gridleft3height ">
+
+
+                <div class="w-100  maingridscaption d-flex justify-content-between ">
+                  <div class="  rounded-pill pe-2 ps-1 big11high maxcontent trafficreccolor">
+
+                    <img src="asscets/log_10736128.png" alt="restart-arrow" class="logsize">
+                    <span class="fs-6 ">TRAFFIC BY RECOGNIZED LOG SOURCES</span>
+                  </div>
+
+                </div>
+                <div class="w-100 d-flex">
+                  <div id="chartdivgrid4" class="w-50"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-6 gy-1">
+              <div class="p-3 gridmaincolor GRID5HEIGHT ">
+
+
+                <div class="w-100 maingridscaption d-flex justify-content-between ">
+                  <div class=" bg-white rounded-pill pe-2 ps-1 big11high maxcontent ">
+
+                    <img src="asscets/organisation statics.svg" alt="restart-arrow">
+                    <span class="fs-6">ORGANISATION STATISTICS</span>
+                  </div>
+
+                </div>
+
+                <div class="row -cols-1 row-cols-sm-2 row-cols-md-4 organisation-statistics-height">
+                  <div class="col" id="chartdiv51"></div>
+                  <div class="col" id="chartdiv52"></div>
+                  <div class="col" id="chartdiv53"></div>
+                  <div class="col" id="chartdiv54"></div>
+                </div>
+                <!-- <div class="row -cols-1 row-cols-sm-2 row-cols-md-4  organization-statatic-font-opacity text-white">
+                    <div class="col" >ACCS-EWF</div>
+                    <div class="col" >CISAI-Test</div>
+                    <div class="col" >ICTS-Test</div>
+                    <div class="col" >Test</div>
+                  </div> -->
+                <div class="row -cols-1 row-cols-sm-2 row-cols-md-4 organisation-statistics-height">
+                  <div class="col" id="chartdiv55"></div>
+                  <div class="col" id="chartdiv56"></div>
+                  <div class="col" id="chartdiv57"></div>
+                  <div class="col" id="chartdiv58"></div>
+                </div>
+                <!-- <div class="row -cols-1 row-cols-sm-2 row-cols-md-4  organization-statatic-font-opacity text-white text-center">
+                  <div class="col " >Ts-Windows</div>
+                  <div class="col" >Test</div>
+                  <div class="col" >Test</div>
+                  <div class="col" >Test</div>
+                </div> -->
+                <div class="row -cols-1 row-cols-sm-2 row-cols-md-4 organisation-statistics-height">
+                  <div class="col" id="chartdiv59"></div>
+                  <div class="col" id="chartdiv510"></div>
+                  <div class="col" id="chartdiv511"></div>
+                  <div class="col" id="chartdiv512"></div>
+                </div>
+                <!-- <div class="row -cols-1 row-cols-sm-2 row-cols-md-4  organization-statatic-font-opacity text-white text-center">
+                <div class="col " >Ts-Windows</div>
+                <div class="col" >Test</div>
+                <div class="col" >Test</div>
+                <div class="col" >Test</div>
+              </div> -->
+
+
+                <!-- <div class="row ps-4 text-white squareopa mt-5">
+                <div class="col-auto square1 me-3">
+                  <div class="square"></div>
+                </div>
+                Unpaired 
+                <div class="col-auto square2 me-3 ms-2">
+                <div class="square"></div>
+              </div>Recognised
+              <div class="col-auto square3 me-3 ms-2">
+              <div class="square"></div>
+            </div>Active
+            <div class="col-auto square4 me-3 ms-2">
+            <div class="square"></div>
+            </div>Non-Active
+                
+              </div>  -->
+                <!-- <div class="container"></div> -->
+
+                <div class="text-white squareopa pt-5">
+                  <div class="d-flex align-items-center">
+                    <div class="square1 me-3"></div>
+                    <div>Unpaired</div>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div class="square2 m-3"></div>
+                    <div>Recognised</div>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div class="square3 m-3"></div>
+                    <div>Active</div>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div class="square4 m-3"></div>
+                    <div>Non-Active</div>
+                  </div>
+                </div>
+                <!-- <div class="container"></div> -->
+
+
+              </div>
+              <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 mt-3">
+                  <div class="p-3 gridmaincolor GRID7HEIGHT">
+
+
+                    <div class="w-100  maingridscaption d-flex justify-content-between ">
+                      <div class=" bg-white rounded-pill pe-2 ps-1 big11high maxcontent ">
+
+                        <img src="asscets/threat category.svg" alt="restart-arrow">
+                        <span class="fs-6">THREAT CATEGORY STATISTICS</span>
+                      </div>
+
+                    </div>
+                    <div class="w-100 ">
+                      <div>
+                        <div id="chartdiv6" class=""></div>
+                        <div id="chartdiv62" class=""></div>
+                        <div id="chartdiv63" class=""></div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6 overflow-auto">
+              <div class="p-3 gridmaincolor GRID6HEIGHT">
+
+
+                <div class="w-100 alertheight maingridscaption d-flex justify-content-between ">
+                  <div class="  rounded-pill pe-2 ps-1 big11high maxcontent alertcolor ">
+
+                    <img src="asscets/alerticon.svg" alt="restart-arrow">
+                    <span class="fs-6 alertfoncolor">ALERTS</span>
+                  </div>
+
+                </div>
+                <div id="alertsfontsize"></div>
+                <div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <script src="./main.js">
+
+
+      </script>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
